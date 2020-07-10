@@ -1,0 +1,24 @@
+{
+  "path": "/exercises",
+  "files": [
+    {
+      "path": "/hello.js"
+    },
+    {
+      "path": "/z.js"
+    }
+  ],
+  "config": {
+    "title": "koans:",
+    "path": "/exercises",
+    "loopGuard": {
+      "active": false,
+      "max": 20
+    },
+    "buttons": [
+      {
+        "console": false
+      }
+    ]
+  }
+}

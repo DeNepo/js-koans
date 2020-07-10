@@ -1,0 +1,13 @@
+{
+  "title": "koans:",
+  "path": "/exercises",
+  "loopGuard": {
+    "active": false,
+    "max": 20
+  },
+  "buttons": [
+    {
+      "console": false
+    }
+  ]
+}
