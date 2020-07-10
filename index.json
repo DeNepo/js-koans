@@ -3,84 +3,23 @@
   "dirs": [
     {
       "path": "/block-scope",
-      "dirs": [
-        {
-          "path": "/1-missing-values",
-          "files": [
-            {
-              "path": "/1.js"
-            },
-            {
-              "path": "/2.js"
-            }
-          ]
-        },
-        {
-          "path": "/2-missing-variables",
-          "files": [
-            {
-              "path": "/1.js"
-            },
-            {
-              "path": "/2.js"
-            },
-            {
-              "path": "/3.js"
-            }
-          ]
-        },
-        {
-          "path": "/3-assign-values",
-          "files": [
-            {
-              "path": "/1.js"
-            },
-            {
-              "path": "/2.js"
-            },
-            {
-              "path": "/3.js"
-            }
-          ]
-        },
-        {
-          "path": "/4-declare-and-assign",
-          "files": [
-            {
-              "path": "/1.js"
-            },
-            {
-              "path": "/2.js"
-            },
-            {
-              "path": "/3.js"
-            }
-          ]
-        }
-      ],
       "files": [
         {
-          "path": "/assign-values.js"
-        },
-        {
           "path": "/const-let.js"
-        },
+        }
+      ]
+    },
+    {
+      "path": "/primitive-types",
+      "files": [
         {
-          "path": "/declare-and-assing.js"
-        },
-        {
-          "path": "/missing-variables.js"
+          "path": "/type-and-value.js"
         }
       ]
     }
   ],
-  "files": [
-    {
-      "path": "/block-scope.js"
-    }
-  ],
   "config": {
-    "title": "koans:",
+    "title": "js-koans:",
     "path": "/exercises",
     "loopGuard": {
       "active": false,

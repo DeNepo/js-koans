@@ -11,6 +11,7 @@ window.onload = async () => {
       window.liveStudyApp = new LiveStudy(index, editor, document.getElementById('study-buttons'));
       // console.log(liveStudyApp);
 
+
       const urlString = window.location.href;
       const url = new URL(urlString);
       const encodedPath = url.searchParams.get("path");
@@ -22,7 +23,7 @@ window.onload = async () => {
           return findFirstExercise(virDir.dirs[0]);
         }
       }
-      try {
+      if (encodedPath) {
         const path = decodeURIComponent(encodedPath);
         const splitPath = path.split('/');
         let exerciseInstance = {};
@@ -38,22 +39,23 @@ window.onload = async () => {
             dirObj = dirObj.dirs.find(dir => dir.path === '/' + subPath);
           }
         }
-        exerciseInstance.load((err, code) => {
-          history.replaceState(null, "", `?path=${encodeURIComponent(exercise.path.abs)}`);
-          exercise.monacoModel.setValue(code);
-          editor.setModel(exercise.monacoModel);
-          exercise.studyWith('console', 'monacoModel', exercise.config.loopGuard || this.loopGuard)
-        });
-        exercise = exerciseInstance;
-      } catch (err) {
+        exercise = exerciseInstance
+      } else {
+        const findFirstExercise = (virDir) => {
+          if (virDir.populated) {
+            return virDir.populated[0]
+          } else if (virDir.dirs) {
+            return findFirstExercise(virDir.dirs[0]);
+          }
+        }
         exercise = findFirstExercise(liveStudyApp.populated);
-        exercise.load((err, code) => {
-          history.replaceState(null, "", `?path=${encodeURIComponent(exercise.path.abs)}`);
-          exercise.monacoModel.setValue(code);
-          editor.setModel(exercise.monacoModel);
-          exercise.studyWith('console', 'monacoModel', exercise.config.loopGuard || this.loopGuard)
-        });
       }
+      exercise.load((err, code) => {
+        history.replaceState(null, "", `?path=${encodeURIComponent(exercise.path.abs)}`);
+        exercise.monacoModel.setValue(code);
+        editor.setModel(exercise.monacoModel);
+        exercise.studyWith('console', 'monacoModel', exercise.config.loopGuard || this.loopGuard)
+      });
       document.getElementById('current-path').innerHTML = exercise.path.abs.split('/').slice(2).join('/');
       liveStudyApp.active = exercise;
 
