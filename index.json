@@ -8,6 +8,7 @@
           "path": "/const-let.js"
         }
       ]
+<<<<<<< HEAD
     },
     {
       "path": "/primitive-types",
@@ -16,6 +17,8 @@
           "path": "/type-and-value.js"
         }
       ]
+=======
+>>>>>>> 2e342d9d021a09df4f417cdbc831dd5d741f7849
     }
   ],
   "config": {
