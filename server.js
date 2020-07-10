@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const marked = require('./lib/marked.js');
 
 const PORT = process.env.PORT || 3000;
 const LOG_DIRNAME = `server-logs`;

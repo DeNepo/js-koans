@@ -66,15 +66,18 @@ export default class LiveStudy {
           document.getElementById('current-path').innerHTML = exercise.path.abs.split('/').slice(2).join('/');
           editor.setModel(exercise.monacoModel);
 
+          this.active = exercise;
+          console.clear();
           if (exercise.code === null) {
             exercise.load((err, code) => {
               exercise.monacoModel.setValue(code);
               this.renderStudyButtons(exercise);
+              exercise.studyWith('console', 'monacoModel', exercise.config.loopGuard || this.loopGuard);
             });
           } else {
             this.renderStudyButtons(exercise);
+            exercise.studyWith('console', 'monacoModel', exercise.config.loopGuard || this.loopGuard)
           }
-          this.active = exercise;
         }
 
         const loadChangesEl = document.createElement('button');
@@ -84,6 +87,8 @@ export default class LiveStudy {
             exercise.monacoModel.setValue(code);
             editor.setModel(exercise.monacoModel);
             this.renderStudyButtons(exercise);
+            console.clear();
+            exercise.studyWith('console', 'monacoModel', exercise.config.loopGuard || this.loopGuard);
           });
         }
 

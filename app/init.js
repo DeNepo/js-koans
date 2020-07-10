@@ -42,6 +42,7 @@ window.onload = async () => {
           history.replaceState(null, "", `?path=${encodeURIComponent(exercise.path.abs)}`);
           exercise.monacoModel.setValue(code);
           editor.setModel(exercise.monacoModel);
+          exercise.studyWith('console', 'monacoModel', exercise.config.loopGuard || this.loopGuard)
         });
         exercise = exerciseInstance;
       } catch (err) {
@@ -50,6 +51,7 @@ window.onload = async () => {
           history.replaceState(null, "", `?path=${encodeURIComponent(exercise.path.abs)}`);
           exercise.monacoModel.setValue(code);
           editor.setModel(exercise.monacoModel);
+          exercise.studyWith('console', 'monacoModel', exercise.config.loopGuard || this.loopGuard)
         });
       }
       document.getElementById('current-path').innerHTML = exercise.path.abs.split('/').slice(2).join('/');
