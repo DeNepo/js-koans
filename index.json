@@ -23,23 +23,7 @@
     },
     {
       "path": "/block-scope",
-      "dirs": [
-        {
-          "path": "/block-scope-copy",
-          "files": [
-            {
-              "path": "/asdf.js"
-            },
-            {
-              "path": "/const-let.js"
-            }
-          ]
-        }
-      ],
       "files": [
-        {
-          "path": "/asdf.js"
-        },
         {
           "path": "/const-let.js"
         }
