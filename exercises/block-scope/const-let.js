@@ -21,6 +21,15 @@ describe('curly braces create a new scope', () => {
     }
     expect(a).to.equal(_);
   });
+  it('let is still block scoped', () => {
+    let a = 'hi';
+    expect(a).to.equal(_);
+    {
+      a = 5;
+      expect(a).to.equal(_);
+    }
+    expect(a).to.equal(_);
+  });
   it('both are block scoped', () => {
     let x = 3;
     let y = 12;
