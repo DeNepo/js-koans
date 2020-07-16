@@ -2,6 +2,26 @@
   "path": "/exercises",
   "dirs": [
     {
+      "path": "/about-testing",
+      "files": [
+        {
+          "path": "/1-expect.js"
+        },
+        {
+          "path": "/2-it.js"
+        },
+        {
+          "path": "/3-describe.js"
+        },
+        {
+          "path": "/4-deep-equality.js"
+        },
+        {
+          "path": "/5-more-assertions.js"
+        }
+      ]
+    },
+    {
       "path": "/block-scope",
       "files": [
         {
@@ -27,10 +47,7 @@
         {
           "path": "/es6-shorthand.js"
         }
-      ],
-      "config": {
-        "buttons": []
-      }
+      ]
     },
     {
       "path": "/primitive-types",
@@ -48,10 +65,6 @@
       "active": false,
       "max": 20
     },
-    "buttons": [
-      {
-        "console": false
-      }
-    ]
+    "buttons": []
   }
 }

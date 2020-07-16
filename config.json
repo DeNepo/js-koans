@@ -5,9 +5,5 @@
     "active": false,
     "max": 20
   },
-  "buttons": [
-    {
-      "console": false
-    }
-  ]
+  "buttons": []
 }

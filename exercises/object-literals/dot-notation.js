@@ -9,8 +9,8 @@ describe('dot notation', () => {
       _: favorite,
       dry: _
     };
-    expect(_).to.eql('bread');
-    expect(obj.wet).to.eql('soup');
+    expect(_).to.equal('bread');
+    expect(obj.wet).to.equal('soup');
   });
   it('a menagerie', () => {
     const swimming = 'mackerel';
@@ -19,8 +19,8 @@ describe('dot notation', () => {
       _: swimming,
       _: 'cheetah'
     };
-    expect(_).to.eql('crane');
-    expect(obj.running).to.eql(_);
-    expect(obj.swimming).to.eql('mackerel')
+    expect(_).to.equal('crane');
+    expect(obj.running).to.equal(_);
+    expect(obj.swimming).to.equal('mackerel')
   });
 });

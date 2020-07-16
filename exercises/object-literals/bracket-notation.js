@@ -9,8 +9,8 @@ describe('bracket notation', () => {
     const obj = {};
     obj[key2] = _;
     obj[_] = 'bread'
-    expect(obj.wet).to.eql('soup');
-    expect(obj[_]).to.eql(_);
+    expect(obj.wet).to.equal('soup');
+    expect(obj[_]).to.equal(_);
   });
   it('a menagerie', () => {
     const motion = 'running';
@@ -21,8 +21,8 @@ describe('bracket notation', () => {
     };
     obj[_] = _;
     obj['flying'] = _;
-    expect(object.flying).to.eql('crane');
-    expect(obj.running).to.eql(fastAnimal);
-    expect(obj[water]).to.eql('mackerel')
+    expect(object.flying).to.equal('crane');
+    expect(obj.running).to.equal(fastAnimal);
+    expect(obj[water]).to.equal('mackerel')
   });
 });

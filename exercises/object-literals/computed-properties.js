@@ -10,8 +10,8 @@ describe('computed properties', () => {
       [_]: 'wet',
       _: _
     };
-    expect(obj.soup).to.eql('wet');
-    expect(obj.dry).to.eql(_);
+    expect(obj.soup).to.equal('wet');
+    expect(obj.dry).to.equal(_);
   });
   it('a menagerie', () => {
     const swimming = 'mackerel';
@@ -22,8 +22,8 @@ describe('computed properties', () => {
       [_]: _,
       running: _
     };
-    expect(obj.flying).to.eql('crane');
-    expect(_).to.eql('cheetah');
-    expect(obj[mackerel]).to.eql(swimming)
+    expect(obj.flying).to.equal('crane');
+    expect(_).to.equal('cheetah');
+    expect(obj[mackerel]).to.equal(swimming)
   });
 });

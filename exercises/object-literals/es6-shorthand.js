@@ -7,8 +7,8 @@ describe('ES6 object literal shorthand', () => {
     const wet = 'soup';
     const dry = 'bread';
     const obj = { _, _ };
-    expect(obj.dry).to.eql(_);
-    expect(obj._).to.eql('soup');
+    expect(obj.dry).to.equal(_);
+    expect(obj._).to.equal('soup');
   });
   it('ES5, ES6', () => {
     const tall = 'tree';
@@ -16,8 +16,8 @@ describe('ES6 object literal shorthand', () => {
       _,
       _: 'bush'
     };
-    expect(obj.short).to.eql(_);
-    expect(_).to.eql('tree');
+    expect(obj.short).to.equal(_);
+    expect(_).to.equal('tree');
   });
   it('a menagerie', () => {
     const swimming = _;
@@ -26,8 +26,8 @@ describe('ES6 object literal shorthand', () => {
       _,
       _: 'cheetah'
     };
-    expect(_).to.eql('crane');
-    expect(obj.running).to.eql(_);
-    expect(_).to.eql('mackerel')
+    expect(_).to.equal('crane');
+    expect(obj.running).to.equal(_);
+    expect(_).to.equal('mackerel')
   });
 });

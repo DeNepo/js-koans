@@ -21,10 +21,10 @@ export default class LiveStudy {
     this.virDir = index;
     this.populated = LiveStudy.populate(index, index.path, index.config);
     this.title = index.config.title;
-    editor.onKeyUp(() => {
-      console.clear();
-      this.active.studyWith('console', 'monacoModel', this.active.config.loopGuard || this.loopGuard)
-    });
+    // editor.onKeyUp(() => {
+    //   console.clear();
+    //   this.active.studyWith('console', 'monacoModel', this.active.config.loopGuard || this.loopGuard)
+    // });
     this.editor = editor;
     this.buttonsContainer = buttonsContainer;
     if (index.config.loopGuard) {

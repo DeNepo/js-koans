@@ -8,8 +8,8 @@ describe('destructuring', () => {
       wet: _,
       dry: 'bread'
     };
-    expect(obj._).to.eql(dry);
-    expect(wet).to.eql('soup');
+    expect(obj._).to.equal(dry);
+    expect(wet).to.equal('soup');
   });
   it('a menagerie', () => {
     const hairiest = 'cheetah';
@@ -25,8 +25,8 @@ describe('destructuring', () => {
       flying,
       running
     } = obj;
-    expect(flying).to.eql(_);
-    expect(_).to.eql('cheetah');
-    expect(swimming).to.eql('mackerel')
+    expect(flying).to.equal(_);
+    expect(_).to.equal('cheetah');
+    expect(swimming).to.equal('mackerel')
   });
 });
