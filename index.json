@@ -27,10 +27,7 @@
         {
           "path": "/es6-shorthand.js"
         }
-      ],
-      "config": {
-        "buttons": []
-      }
+      ]
     },
     {
       "path": "/primitive-types",
