@@ -8,7 +8,29 @@
           "path": "/const-let.js"
         }
       ]
-<<<<<<< HEAD
+    },
+    {
+      "path": "/object-literals",
+      "files": [
+        {
+          "path": "/bracket-notation.js"
+        },
+        {
+          "path": "/computed-properties.js"
+        },
+        {
+          "path": "/destructuring.js"
+        },
+        {
+          "path": "/dot-notation.js"
+        },
+        {
+          "path": "/es6-shorthand.js"
+        }
+      ],
+      "config": {
+        "buttons": []
+      }
     },
     {
       "path": "/primitive-types",
@@ -17,8 +39,6 @@
           "path": "/type-and-value.js"
         }
       ]
-=======
->>>>>>> 2e342d9d021a09df4f417cdbc831dd5d741f7849
     }
   ],
   "config": {
