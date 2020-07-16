@@ -8,6 +8,7 @@
           "path": "/const-let.js"
         }
       ]
+<<<<<<< HEAD
     },
     {
       "path": "/object-literals",
@@ -31,6 +32,8 @@
       "config": {
         "buttons": []
       }
+=======
+>>>>>>> 935b651f391e0f717fcd261258eafc4f00a2b8d9
     },
     {
       "path": "/primitive-types",
