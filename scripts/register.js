@@ -115,3 +115,41 @@ console.log('\n--- writing /index.json ---\n');
 // write the file
 const stringifiedReg = JSON.stringify(registered, null, '  ');
 fs.writeFileSync(path.normalize(path.join(__dirname, '..', 'index.json')), stringifiedReg);
+
+
+const tableOfContents = (virDir, path, indent) => {
+  indent = indent || '';
+  path = path || '';
+  const dirList = virDir.dirs
+    ? virDir.dirs
+      .map(subDir => {
+        const subIndex = tableOfContents(subDir, path + subDir.path, indent + '  ');
+        const reviewPath = path + subDir.path;
+        return `${indent}- [${subDir.path}](.${reviewPath})`
+          + (subIndex ? '\n' + subIndex : '\n');
+      })
+      .reduce((list, li) => list + li, '')
+    : '';
+
+  const filesList = virDir.files
+    ? virDir.files
+      .map(file => {
+        const reviewPath = path + file.path;
+        return `${indent}- [${file.path}](.${reviewPath})\n`
+      })
+      .reduce((list, li) => list + li, '')
+    : '';
+  return filesList + dirList;
+}
+
+const newToc = tableOfContents(registered);
+const tocRegex = /(<!--[ \t]*BEGIN TOC[ \t]*-->)([^;]*)(<!--[ \t]*END TOC[ \t]*-->)/;
+const tocReplacer = `<!-- BEGIN TOC -->\n${newToc}\n<!-- END TOC -->`;
+const readmePath = path.normalize(path.join(EXERCISES_DIR, 'README.md'));
+const oldReadme = fs.existsSync(readmePath)
+  ? fs.readFileSync(readmePath, 'utf-8')
+  : '';
+const newReadme = oldReadme.match(tocRegex)
+  ? oldReadme.replace(tocRegex, tocReplacer)
+  : `${oldReadme}\n\n${tocReplacer}`;
+fs.writeFileSync(readmePath, newReadme);
