@@ -8,7 +8,7 @@ describe('destructuring', () => {
       wet: _,
       dry: 'bread'
     };
-    expect(obj._).to.equal(dry);
+    expect(_).to.equal('bread);
     expect(wet).to.equal('soup');
   });
   it('a menagerie', () => {
