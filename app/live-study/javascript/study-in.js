@@ -5,7 +5,7 @@ export default {
   },
   debugger: function (code) {
     const stepThrough = eval;
-    const debuggered = "// study tip: place a breakpoint at the beginning of each it()\ndebugger;\n\n" + code;
+    const debuggered = "// study tip: place a breakpoint on the first line inside each it()\ndebugger;\n\n" + code;
     stepThrough(debuggered);
   },
 };
